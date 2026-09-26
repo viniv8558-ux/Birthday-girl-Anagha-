@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Anagha's Birthday Mission 🥳❤️</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+min-height:100vh;
+font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:
+radial-gradient(circle at 20% 20%,#2a1235 0%,transparent 35%),
+radial-gradient(circle at 80% 80%,#17123d 0%,transparent 40%),
+#070611;
+color:#fff;
+overflow-x:hidden;
+}
+
+.hidden{
+display:none!important;
+}
+
+.page{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:24px;
+position:relative;
+}
+
+.card{
+width:min(700px,94vw);
+padding:32px 24px;
+border:1px solid #ffffff20;
+border-radius:30px;
+background:linear-gradient(
+145deg,
+#ffffff12,
+#ffffff05
+);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+box-shadow:
+0 25px 90px #0009,
+inset 0 1px 0 #ffffff12;
+text-align:center;
+position:relative;
+z-index:2;
+animation:cardIn .8s ease;
+}
+
+@keyframes cardIn{
+from{
+opacity:0;
+transform:translateY(25px) scale(.97);
+}
+to{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+
+.mini{
+font-size:12px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#e8c9ff;
+}
+
+h1{
+font-size:clamp(38px,10vw,70px);
+margin:14px 0;
+line-height:1.05;
+background:linear-gradient(
+90deg,
+#fff,
+#ffb7e9,
+#cbbdff
+);
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
+}
+
+h2{
+font-size:clamp(26px,7vw,42px);
+margin:15px 0;
+}
+
+p{
+font-size:18px;
+line-height:1.7;
+color:#eeeeee;
+}
+
+.emoji{
+font-size:25px;
+line-height:1.6;
+word-break:break-word;
+}
+
+.lock{
+font-size:58px;
+margin-top:12px;
+animation:shake .8s infinite;
+}
+
+@keyframes shake{
+0%,100%{transform:rotate(0)}
+25%{transform:rotate(-7deg)}
+75%{transform:rotate(7deg)}
+}
+
+.next{
+border:0;
+border-radius:999px;
+padding:15px 25px;
+font-size:16px;
+font-weight:800;
+cursor:pointer;
+background:linear-gradient(
+90deg,
+#ffb7e9,
+#d7c4ff
+);
+color:#24112c;
+box-shadow:0 10px 30px #0007;
+transition:.25s;
+margin-top:10px;
+}
+
+.next:hover{
+transform:translateY(-3px) scale(1.02);
+box-shadow:0 15px 35px #0009;
+}
+
+.next:active{
+transform:scale(.96);
+}
+
+/* MUSIC BUTTON */
+
+.musicButton{
+border:1px solid #ffffff25;
+border-radius:999px;
+padding:13px 22px;
+font-size:15px;
+font-weight:800;
+cursor:pointer;
+background:linear-gradient(
+90deg,
+#ffb7e9,
+#d7c4ff
+);
+color:#24112c;
+box-shadow:0 10px 30px #0007;
+margin:18px auto 5px;
+display:none;
+transition:.25s;
+}
+
+.musicButton:hover{
+transform:translateY(-3px);
+}
+
+.musicButton:active{
+transform:scale(.95);
+}
+
+/* PROGRESS */
+
+.progressText{
+font-size:13px;
+letter-spacing:2px;
+color:#d9c8e8;
+margin-bottom:8px;
+}
+
+.progress{
+height:7px;
+background:#ffffff14;
+border-radius:20px;
+overflow:hidden;
+margin:10px 0 25px;
+}
+
+.bar{
+height:100%;
+width:0;
+background:linear-gradient(
+90deg,
+#ff9edb,
+#c4b1ff
+);
+transition:width .8s ease;
+}
+
+/* LEVEL */
+
+.levelIcon{
+font-size:55px;
+margin-bottom:5px;
+}
+
+.levelSubtitle{
+font-size:14px;
+color:#cfc3d9;
+margin-top:-5px;
+}
+
+/* SEARCH AREA */
+
+.searchArea{
+margin:28px auto;
+min-height:170px;
+max-width:560px;
+position:relative;
+}
+
+.secret{
+position:absolute;
+border:1px solid #ffffff12;
+background:#ffffff08;
+color:#ffffff35;
+font-size:17px;
+padding:10px 14px;
+border-radius:13px;
+cursor:pointer;
+transition:.25s;
+}
+
+.secret:hover{
+color:#fff;
+background:#ffffff20;
+transform:scale(1.08);
+}
+
+.secret:active{
+transform:scale(.95);
+}
+
+.secret.s1{
+left:5%;
+top:8%;
+}
+
+.secret.s2{
+right:6%;
+top:15%;
+}
+
+.secret.s3{
+left:38%;
+bottom:7%;
+}
+
+.secret.s4{
+right:27%;
+top:3%;
+}
+
+.secret.s5{
+left:14%;
+bottom:10%;
+}
+
+.secret.s6{
+right:3%;
+bottom:2%;
+}
+
+.reveal{
+font-size:clamp(19px,5vw,27px);
+font-weight:700;
+line-height:1.6;
+min-height:190px;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:10px;
+animation:revealIn .7s ease;
+}
+
+@keyframes revealIn{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* FINAL */
+
+.finalBox{
+padding:22px;
+border-radius:22px;
+background:#ffffff08;
+border:1px solid #ffffff0d;
+margin:18px 0;
+text-align:left;
+line-height:1.85;
+font-size:18px;
+}
+
+.highlight{
+font-weight:900;
+color:#ffd0ed;
+}
+
+#typedMessage{
+min-height:100px;
+}
+
+.finalHeart{
+font-size:60px;
+animation:heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat{
+0%,100%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.13);
+}
+}
+
+/* FINAL BIRTHDAY PHOTO */
+
+.finalPhoto{
+width:100%;
+max-width:520px;
+height:auto;
+display:block;
+margin:5px auto 22px;
+border-radius:24px;
+border:1px solid #ffffff25;
+box-shadow:
+0 20px 60px #0009,
+0 0 35px #ffb7e933;
+object-fit:cover;
+animation:photoIn 1s ease;
+}
+
+@keyframes photoIn{
+from{
+opacity:0;
+transform:scale(.94) translateY(15px);
+}
+to{
+opacity:1;
+transform:scale(1) translateY(0);
+}
+}
+
+.finalWish{
+font-size:18px;
+font-weight:800;
+color:#ffd0ed;
+margin:0 auto 20px;
+}
+
+/* MUSIC INDICATOR */
+
+.musicIndicator{
+position:fixed;
+right:16px;
+top:16px;
+z-index:40;
+width:45px;
+height:45px;
+border-radius:50%;
+background:#ffffff12;
+border:1px solid #ffffff20;
+display:none;
+align-items:center;
+justify-content:center;
+font-size:20px;
+box-shadow:0 8px 25px #0007;
+}
+
+.musicIndicator.playing{
+display:flex;
+animation:musicPulse 1.5s infinite;
+}
+
+@keyframes musicPulse{
+0%,100%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.08);
+}
+}
+
+/* FALLING EMOJIS */
+
+#falling span{
+position:fixed;
+top:-40px;
+z-index:20;
+pointer-events:none;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(115vh) rotate(500deg);
+opacity:0;
+}
+}
+
+/* TOAST */
+
+.toast{
+position:fixed;
+left:50%;
+bottom:25px;
+transform:translateX(-50%) translateY(30px);
+background:#181326;
+border:1px solid #ffffff20;
+padding:12px 18px;
+border-radius:999px;
+font-size:14px;
+opacity:0;
+pointer-events:none;
+transition:.35s;
+z-index:50;
+box-shadow:0 10px 30px #0008;
+white-space:nowrap;
+}
+
+.toast.show{
+opacity:1;
+transform:translateX(-50%) translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+.page{
+padding:15px;
+}
+
+.card{
+padding:28px 17px;
+border-radius:25px;
+}
+
+.finalBox{
+font-size:16px;
+padding:18px;
+}
+
+.reveal{
+font-size:19px;
+}
+
+.secret{
+font-size:15px;
+padding:8px 10px;
+}
+
+.finalPhoto{
+max-width:100%;
+border-radius:20px;
+}
+
+.finalWish{
+font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC FILE -->
+<audio id="bgMusic" preload="auto">
+<source src="Gatiya Ilidu Ulidavaru Kandante Lyrical Video Song V1 Jay Prakash Kishore Ajaneesh.mp3" type="audio/mpeg">
+</audio>
+
+<div id="falling"></div>
+
+<div class="toast" id="toast"></div>
+
+<div class="musicIndicator" id="musicIndicator">
+🎵
+</div>
+
+
+<!-- ==================================================
+INTRO
+================================================== -->
+
+<section class="page" id="intro">
+
+<div class="card">
+
+<div class="mini">
+⚠️ CLASSIFIED BIRTHDAY MISSION ⚠️
+</div>
+
+<div class="lock">
+🔐
+</div>
+
+<h1>
+ANAGHA... 👀
+</h1>
+
+<p>
+You've received a very suspicious birthday file from
+<b>me</b>. 🥳
+</p>
+
+<div class="emoji">
+🥳🎉🎁😊🤗✨🎊
+</div>
+
+<p>
+<b>WARNING:</b><br>
+This website contains friendship,
+random conversations,
+nonsense,
+and an unreasonable amount of 😂.
+</p>
+
+<p>
+Your mission is NOT to simply click a button
+like a normal person. 🤦😂
+</p>
+
+<button class="next" onclick="startMission()">
+Accept the mission 😈
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+MISSION PAGE
+================================================== -->
+
+<section class="page hidden" id="missionPage">
+
+<div class="card">
+
+<div class="progressText">
+MISSION <span id="levelNumber">1</span> OF 6
+</div>
+
+<div class="progress">
+<div class="bar" id="bar"></div>
+</div>
+
+<div class="levelIcon" id="levelIcon">
+🔎
+</div>
+
+<h2 id="levelTitle">
+Level 1
+</h2>
+
+<div class="levelSubtitle">
+Find the classified secret 👀
+</div>
+
+<p id="levelHint"></p>
+
+<!-- MUSIC BUTTON -->
+<button
+id="musicButton"
+class="musicButton"
+onclick="playMusic()">
+🎵 Play Music
+</button>
+
+<div
+class="searchArea"
+id="searchArea">
+</div>
+
+<div
+class="reveal"
+id="reveal">
+</div>
+
+<button
+class="next hidden"
+id="continueBtn"
+onclick="nextLevel()">
+
+Continue ➜
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+FINAL PAGE
+================================================== -->
+
+<section class="page hidden" id="finalPage">
+
+<div class="card">
+
+<div class="mini">
+🎉 MISSION COMPLETE 🎉
+</div>
+
+<div class="finalHeart">
+🤩
+</div>
+
+<h1>
+HAPPY BIRTHDAY
+<br>
+ANAGHA
+</h1>
+
+<!-- BEACH PHOTO -->
+<img
+src="anagha-beach.jpg"
+alt="Anagha"
+class="finalPhoto">
+
+<div class="finalWish">
+Happy Birthday, multitalented person! ❤️✨
+</div>
+
+<p id="typedMessage"></p>
+
+
+<!-- LEVEL 6 FINAL MESSAGE -->
+
+<div class="finalBox">
+
+<b>
+After all the nonsense, jokes and our random conversations,
+the actual thing is simple.
+</b>
+
+<br><br>
+
+Ur glad that I'm ur friend 😃.
+
+I don’t need to make this too emotional
+or give some big promises
+
+Just remember one thing —
+
+<b>
+whatever happens in life,
+if you ever genuinely need your friend,
+you know where to find me.
+</b>
+
+<br><br>
+
+Good times, bad times
+or completely stupid times 😂
+I’ll be there.
+
+<br><br>
+
+<b>
+No drama, no ego,
+just friendship. ❤️🤝
+</b>
+
+</div>
+
+
+<div class="emoji">
+🎊✨🤗😊🎁🎉🥳
+</div>
+
+<h2>
+Happy Birthday, Anagha! 🎂🎁❤️
+</h2>
+
+<p>
+<b>— Vinod 🤝</b>
+</p>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* ==================================================
+MUSIC
+================================================== */
+
+const music =
+document.getElementById("bgMusic");
+
+const musicIndicator =
+document.getElementById("musicIndicator");
+
+const musicButton =
+document.getElementById("musicButton");
+
+
+function startMusic(){
+
+music.currentTime = 0;
+
+music.volume = 0.65;
+
+music.play()
+.then(function(){
+
+musicIndicator.classList.add("playing");
+
+musicButton.style.display = "none";
+
+})
+.catch(function(){
+
+musicButton.style.display = "inline-block";
+
+});
+
+}
+
+
+/* MANUAL MUSIC BUTTON */
+
+function playMusic(){
+
+music.currentTime = 0;
+
+music.volume = 0.65;
+
+music.play()
+.then(function(){
+
+musicIndicator.classList.add("playing");
+
+musicButton.style.display = "none";
+
+showToast("🎵 Music started ❤️");
+
+})
+.catch(function(){
+
+showToast("Music couldn't be started. Check the MP3 file.");
+
+});
+
+}
+
+
+/* MUSIC STATUS */
+
+music.addEventListener(
+"play",
+function(){
+
+musicIndicator.classList.add("playing");
+
+});
+
+
+music.addEventListener(
+"pause",
+function(){
+
+musicIndicator.classList.remove("playing");
+
+});
+
+
+music.addEventListener(
+"ended",
+function(){
+
+musicIndicator.classList.remove("playing");
+
+});
+
+
+/* ==================================================
+LEVEL DATA
+================================================== */
+
+const levels=[
+
+{
+
+icon:"🔎",
+
+title:"Level 1 — The Nonsense Begins",
+
+hint:
+"Find the suspicious thing hiding among the nonsense. 👀😂",
+
+message:
+"You’re really one of those people who can make even a normal boring conversation completely nonsense within few minutes 😂 and somehow I actually enjoy that. Our random talks, stupid jokes and all the unnecessary things we discuss are probably what make this friendship different. 🤝",
+
+words:[
+"nothing here",
+"😂",
+"probably this",
+"👀",
+"normal",
+"THE NONSENSE 😂"
+],
+
+correct:"THE NONSENSE 😂"
+
+},
+
+
+{
+
+icon:"😎",
+
+title:"Level 2 — Friendship Files",
+
+hint:
+"One of these contains the actual classified truth. Find it. 🕵️",
+
+message:
+"Our friendship is basically full of random stories, crazy talks, 100 emojis and things which make absolutely no sense 😂 but behind all this nonsense one thing is clear, I genuinely trust you and respect you. So don’t overthink anything, you’re already one of my good friend list. 😎🤝",
+
+words:[
+"100 emojis",
+"🤦",
+"good friend list",
+"nothing",
+"😂",
+"classified"
+],
+
+correct:"good friend list"
+
+},
+
+
+{
+
+icon:"🔒",
+
+title:"Level 3 — The Secret Vault",
+
+hint:
+"Some things in this friendship are permanently classified. 🔐",
+
+message:
+"No matter how bad things get, if you ever need someone to listen or just sit there without judging, you know you have one friend. Even if we stop talking for months or years, I don’t think friendship needs daily conversations to prove anything. No ego, no attitude, no unnecessary drama. Ur secrets locked with me key is stolen by today's birthday girl. 🔒🤝",
+
+words:[
+"no ego",
+"100 emojis",
+"THE KEY",
+"😂",
+"secret",
+"locked"
+],
+
+correct:"locked"
+
+},
+
+
+{
+
+icon:"📂",
+
+title:"Level 4 — Classified Memory",
+
+hint:
+"Open the file connected to the beginning of this friendship. 👀",
+
+message:
+"I still remember how this friendship actually started 😂 honestly at that time I never thought we would become this close. It was just one normal meeting and some random conversations, but somehow within a very short time everything became comfortable. 😂 From that first day to all the nonsense we talk now, a lot changed without us even noticing. And that's probably the funniest part... we never planned this friendship, it just happened. 😂🤝",
+
+words:[
+"wrong memory",
+"first day",
+"random file",
+"😂",
+"CLASSIFIED MEMORY",
+"404"
+],
+
+correct:"CLASSIFIED MEMORY"
+
+},
+
+
+{
+
+icon:"⏱️",
+
+title:"Level 5 — The 3-Hour Speedrun",
+
+hint:
+"How quickly did everything become comfortable? 👀😂",
+
+message:
+"Most people slowly become friends but us? 😂 within 3 hours everything became comfortable do u remember . I still remember you telling me that I made you believe male friendship can actually be trusted 😊 so maybe that’s one reason I wanted to make this little my own coding gift for you. ✨🎊🎁",
+
+words:[
+"3 days",
+"3 weeks",
+"3 hours 😂",
+"3 months",
+"3 years",
+"speedrun"
+],
+
+correct:"3 hours 😂"
+
+},
+
+
+{
+
+icon:"❤️",
+
+title:"Level 6 — The Actual Thing",
+
+hint:
+"Final level. No tricks this time... well, maybe one. 😂",
+
+message:
+"After all the nonsense, jokes and our random conversations, the actual thing is simple. Ur glad that I'm ur friend😃. I don’t need to make this too emotional or give some big promises 😂 just remember one thing — whatever happens in life, if you ever genuinely need your friend, you know where to find me. Good times, bad times or completely stupid times 😂 I’ll be there. No drama, no ego, just friendship. ❤️🤝",
+
+words:[
+"😂",
+"random conversations",
+"friendship",
+"no ego",
+"THE ACTUAL THING ❤️",
+"100 emojis"
+],
+
+correct:"THE ACTUAL THING ❤️"
+
+}
+
+];
+
+
+/* ==================================================
+STATE
+================================================== */
+
+let currentLevel=0;
+
+let found=false;
+
+
+/* ==================================================
+START
+================================================== */
+
+function startMission(){
+
+document
+.getElementById("intro")
+.classList.add("hidden");
+
+document
+.getElementById("missionPage")
+.classList.remove("hidden");
+
+startMusic();
+
+loadLevel();
+
+}
+
+
+/* ==================================================
+LOAD LEVEL
+================================================== */
+
+function loadLevel(){
+
+found=false;
+
+const level=
+levels[currentLevel];
+
+
+document
+.getElementById("levelNumber")
+.textContent=
+currentLevel+1;
+
+
+document
+.getElementById("bar")
+.style.width=
+((currentLevel+1)/6*100)+"%";
+
+
+document
+.getElementById("levelIcon")
+.textContent=
+level.icon;
+
+
+document
+.getElementById("levelTitle")
+.textContent=
+level.title;
+
+
+document
+.getElementById("levelHint")
+.textContent=
+level.hint;
+
+
+document
+.getElementById("reveal")
+.textContent="";
+
+
+document
+.getElementById("continueBtn")
+.classList.add("hidden");
+
+
+const area=
+document.getElementById("searchArea");
+
+area.innerHTML="";
+
+
+level.words.forEach(
+function(word,index){
+
+const button=
+document.createElement("button");
+
+button.className=
+"secret s"+(index+1);
+
+button.textContent=word;
+
+button.onclick=
+function(){
+
+checkAnswer(word);
+
+};
+
+area.appendChild(button);
+
+});
+
+}
+
+
+/* ==================================================
+CHECK ANSWER
+================================================== */
+
+function checkAnswer(answer){
+
+if(found)return;
+
+
+const level=
+levels[currentLevel];
+
+
+if(answer!==level.correct){
+
+showToast(
+"😂 Nope. Keep searching..."
+);
+
+document
+.getElementById("reveal")
+.textContent=
+"😂 Nice try... but that's not it. Keep searching. 👀";
+
+return;
+
+}
+
+
+found=true;
+
+
+document
+.getElementById("searchArea")
+.innerHTML="";
+
+
+const reveal=
+document.getElementById("reveal");
+
+reveal.textContent=
+level.message;
+
+
+document
+.getElementById("continueBtn")
+.classList.remove("hidden");
+
+
+document
+.getElementById("continueBtn")
+.textContent=
+currentLevel===5
+?
+"Complete the mission 🤩🎁"
+:
+"Continue ➜";
+
+
+burst(
+currentLevel===5
+?
+50
+:
+18
+);
+
+}
+
+
+/* ==================================================
+NEXT LEVEL
+================================================== */
+
+function nextLevel(){
+
+if(currentLevel<5){
+
+currentLevel++;
+
+loadLevel();
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+else{
+
+finishMission();
+
+}
+
+}
+
+
+/* ==================================================
+FINISH
+================================================== */
+
+function finishMission(){
+
+document
+.getElementById("missionPage")
+.classList.add("hidden");
+
+document
+.getElementById("finalPage")
+.classList.remove("hidden");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+typeFinal();
+
+burst(100);
+
+}
+
+
+/* ==================================================
+FINAL TYPING
+================================================== */
+
+function typeFinal(){
+
+const message=
+"You completed the most unnecessarily complicated birthday mission ever. 😂 But honestly... this little coding gift was worth making. ❤️";
+
+const element=
+document.getElementById("typedMessage");
+
+element.textContent="";
+
+let index=0;
+
+const timer=
+setInterval(
+function(){
+
+element.textContent+=
+message[index];
+
+index++;
+
+if(index>=message.length){
+
+clearInterval(timer);
+
+}
+
+},
+35
+);
+
+}
+
+
+/* ==================================================
+TOAST
+================================================== */
+
+function showToast(message){
+
+const toast=
+document.getElementById("toast");
+
+toast.textContent=message;
+
+toast.classList.add("show");
+
+setTimeout(
+function(){
+
+toast.classList.remove("show");
+
+},
+2000
+);
+
+}
+
+
+/* ==================================================
+EMOJI BURST
+================================================== */
+
+function burst(number){
+
+const emojis=[
+
+"❤️",
+"💖",
+"✨",
+"🎉",
+"😂",
+"🤣",
+"🎂",
+"🫶",
+"🤝",
+"🎊"
+
+];
+
+
+for(
+let i=0;
+i<number;
+i++
+){
+
+const span=
+document.createElement("span");
+
+
+span.textContent=
+emojis[
+Math.floor(
+Math.random()*emojis.length
+)
+];
+
+
+span.style.left=
+Math.random()*100+"vw";
+
+
+span.style.fontSize=
+(18+Math.random()*22)+"px";
+
+
+span.style.animationDuration=
+(2+Math.random()*4)+"s";
+
+
+span.style.animationDelay=
+Math.random()+"s";
+
+
+document
+.getElementById("falling")
+.appendChild(span);
+
+
+setTimeout(
+function(){
+
+span.remove();
+
+},
+7000
+);
+
+}
+
+}
+
+
+/* ==================================================
+BUTTON SPARKS
+================================================== */
+
+document.addEventListener(
+"click",
+function(event){
+
+if(
+event.target.tagName==="BUTTON"
+){
+
+const rect=
+event.target.getBoundingClientRect();
+
+
+for(
+let i=0;
+i<4;
+i++
+){
+
+const spark=
+document.createElement("span");
+
+spark.textContent="✨";
+
+spark.style.position="fixed";
+
+spark.style.left=
+(
+rect.left+
+rect.width/2+
+Math.random()*40-20
+)+"px";
+
+spark.style.top=
+(
+rect.top+
+rect.height/2+
+Math.random()*40-20
+)+"px";
+
+spark.style.zIndex="100";
+
+spark.style.pointerEvents="none";
+
+spark.style.transition=
+"all .7s ease";
+
+document.body.appendChild(spark);
+
+
+setTimeout(
+function(){
+
+spark.style.transform=
+"translateY(-40px) scale(1.5)";
+
+spark.style.opacity="0";
+
+},
+20
+);
+
+
+setTimeout(
+function(){
+
+spark.remove();
+
+},
+750
+);
+
+}
+
+}
+
+});
+
+</script>
+
+</body>
+  </html>
